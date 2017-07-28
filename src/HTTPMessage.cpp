@@ -55,7 +55,7 @@ std::string HTTPMessage::getLine(){
 
 	for(unsinged int i = startPos; i < size(); i++){
 		c = peek();
-		if((c == 13) ||(c == 10)){
+		if((c == 13) ||(c == 10)){//\r\n
 			newLineReached = true;
 			break;
 		}
@@ -127,7 +127,7 @@ bool HTTPMessage::parseBody(){
 	if(hlenstr.empty())
 		return true;
 
-	contentLen = atoi(hlenstr.c_str);
+	contentLen = atoi(hlenstr.c_str());
 
 	if(contentLen > byteRemaining()+1){
 

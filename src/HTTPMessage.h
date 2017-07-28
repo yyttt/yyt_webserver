@@ -38,7 +38,7 @@ const static char* const requestMethodStr[NUM_METHODS] = {
 
 }
 
-enum status{
+enum Status{
 	CONTINUE = 100;
 
 	OK = 200;
